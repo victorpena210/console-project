@@ -35,6 +35,12 @@ public class Demo {
 		System.out.println("=========");
 		System.out.println(bookService.filterBooksByPublisher(publisher1, books));
 		
+		System.out.println("=========");
+		
+		System.out.println(bookService.filterBooksAfterSpecifiedYear(1997, books));
+		
+		
+		
 		
 	}
 }

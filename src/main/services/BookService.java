@@ -29,8 +29,19 @@ public class BookService {
 		return result;
 	}
 	
-	public Book[] filterBooksAfterSpecifiedYear(int yearFromInclusively, Book[] books) {
-		return books;
+	public String filterBooksAfterSpecifiedYear(int yearFromInclusively, Book[] books) {
+		int searchedYear = yearFromInclusively;
+		String result = "";
+		
+		System.out.println(yearFromInclusively);
+		for(int i =0; i < books.length; i++) {
+			
+			if(books[i].getPublishingYear() >= searchedYear) {
+				result += books[i] + System.lineSeparator();
+			}
+		}
+		
+		return result;
 		
 	}
 
