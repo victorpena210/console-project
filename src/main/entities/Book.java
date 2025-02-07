@@ -1,34 +1,36 @@
-package entities;
+package main.entities;
 
 import java.math.BigDecimal;
+import java.util.Arrays;
 
 public class Book {
 	
 	int id;
 	String name;
 	Author[] authors;
-	Publisher publisher;
+	Publisher publishers;
 	int publishingYear;
 	int amountOfPages;
 	BigDecimal price;
 	CoverType coverType;
 
-	public Book(int id, String name, Author[] authors, Publisher publisher, int publishingYear, int amountOfPages, BigDecimal price, CoverType coverType) {
+	@Override
+	public String toString() {
+		return "Book [id=" + id + ", name=" + name + ", authors=" + Arrays.toString(authors) + ", publishers="
+				+ publishers + ", publishingYear=" + publishingYear + ", amountOfPages=" + amountOfPages + ", price="
+				+ price + ", coverType=" + coverType + "]";
+	}
+
+	public Book(int id, String name, Author[] authors, Publisher publishers, int publishingYear, int amountOfPages,
+			BigDecimal price, CoverType coverType) {
 		this.id = id;
 		this.name = name;
 		this.authors = authors;
-		this.publisher = publisher;
+		this.publishers = publishers;
 		this.publishingYear = publishingYear;
 		this.amountOfPages = amountOfPages;
 		this.price = price;
 		this.coverType = coverType;
-	
-		
-	}
-	
-	@Override
-	public String toString() {
-		return "book: " + id + " \n" + name + "\n" + authors + "\n" + publisher + "\n" + publishingYear + "\n" + amountOfPages + "\n" + price + "\n" + coverType;
 	}
 
 	public int getId() {
@@ -55,12 +57,12 @@ public class Book {
 		this.authors = authors;
 	}
 
-	public Publisher getPublisher() {
-		return publisher;
+	public Publisher getPublishers() {
+		return publishers;
 	}
 
-	public void setPublisher(Publisher publisher) {
-		this.publisher = publisher;
+	public void setPublishers(Publisher publishers) {
+		this.publishers = publishers;
 	}
 
 	public int getPublishingYear() {
@@ -94,6 +96,8 @@ public class Book {
 	public void setCoverType(CoverType coverType) {
 		this.coverType = coverType;
 	}
+	
+	
 	
 	
 
