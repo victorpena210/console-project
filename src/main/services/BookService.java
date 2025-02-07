@@ -17,11 +17,16 @@ public class BookService {
 	return result;
 	}
 	
-	
-	
-	public Book[] filterBooksByPublisher(Publisher publisher, Book[] books) {
+	public String filterBooksByPublisher(Publisher publisher, Book[] books) {
 		String searchedPublisher = publisher.getPublisherName();
-		return books;
+		String result = "";
+		for(int i = 0; i< books.length; i++) {
+
+			if(books[i].getPublishers().getPublisherName().equals(searchedPublisher)) {
+				result += books[i] + System.lineSeparator();
+			}
+		}
+		return result;
 	}
 	
 	public Book[] filterBooksAfterSpecifiedYear(int yearFromInclusively, Book[] books) {

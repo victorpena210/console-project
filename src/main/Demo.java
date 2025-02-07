@@ -27,8 +27,13 @@ public class Demo {
 		Author author1 = new Author();
 		author1.setFirstName("Jon");
 		author1.setLastName("Johnson");
+		
+		Publisher publisher1 = new Publisher();
+		publisher1.setPublisherName("Publisher_1");
 
 		System.out.println(bookService.filterBooksByAuthor(author1, books));
+		System.out.println("=========");
+		System.out.println(bookService.filterBooksByPublisher(publisher1, books));
 		
 		
 	}
