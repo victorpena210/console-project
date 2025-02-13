@@ -1,51 +1,78 @@
-package onlineShop.entities.implementations;
-
 import onlineShop.entities.User;
 
 public class DefaultUser implements User {
 	
 	private static int userCounter = 0;
+	
+	private int id;
+	private String firstName;
+	private String lastName;
+	private String password;
+	private String email;
+
+	{
+		id = ++userCounter;
+	}
+	
+	public DefaultUser() {
+	}
+	
+	public DefaultUser(String firstName, String lastName, String password, String email) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.password = password;
+		this.email = email;
+	}
 
 	@Override
 	public String getFirstName() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.firstName;
 	}
 
 	@Override
 	public String getLastName() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.lastName;
 	}
 
 	@Override
 	public String getPassword() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.password;
 	}
 
 	@Override
 	public String getEmail() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.email;
+	}
+	
+	@Override
+	public String toString() {
+		return "First Name: " + this.getFirstName() + "\t\t" +
+				"Last Name: " + this.getLastName() + "\t\t" +
+				"Email: " + this.getEmail();
 	}
 
 	@Override
-	public int getId() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public void setPassword(String newPassword) {
-		// TODO Auto-generated method stub
-		
+	public void setPassword(String password) {
+		if (password == null) {
+			return;
+		}
+		this.password = password;
 	}
 
 	@Override
 	public void setEmail(String newEmail) {
-		// TODO Auto-generated method stub
-		
+		if (newEmail == null) {
+			return;
+		}
+		this.email = newEmail;
 	}
 
+	@Override
+	public int getId() {
+		return this.id;
+	}
+	
+	void clearState() {
+		userCounter = 0;
+	}
 }

@@ -1,5 +1,10 @@
 package onlineShop.entities;
 
-public class Product {
+public interface Product {
+	
+	int getId();
+	String getProductName();
+	
+	
 
 }
