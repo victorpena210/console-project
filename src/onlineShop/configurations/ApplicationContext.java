@@ -1,4 +1,4 @@
-package onlineShop.configs;
+package onlineShop.configurations;
 
 public class ApplicationContext {
 
