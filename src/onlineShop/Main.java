@@ -1,4 +1,6 @@
 package onlineShop;
+import onlineShop.menu.Menu;
+import onlineShop.menu.implementations.MainMenu;
 
 public class Main {
 	
@@ -6,7 +8,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 		Menu mainMenu = new MainMenu();
-		mainMenu.Start();
+		mainMenu.start();
 	}
 
 }
