@@ -1,5 +1,6 @@
 package onlineShop.services.implementations;
 
+import onlineShop.configurations.ApplicationContext;
 import onlineShop.entities.Product;
 import onlineShop.entities.implementations.DefaultProduct;
 import onlineShop.services.ProductManagementService;
@@ -30,15 +31,31 @@ public class DefaultProductManagementService implements ProductManagementService
 				
 		};
 	}
+	
+	private DefaultProductManagementService() {
+		
+	}
+	
+	public static DefaultProductManagementService getInstance() {
+		if (instance == null) {
+			instance = new DefaultProductManagementService();
+		}
+		return instance;
+	}
+	
+	
 	@Override
 	public Product[] getProducts() {
-		// TODO Auto-generated method stub
-		return null;
+		return products;
 	}
 
 	@Override
 	public Product getProductById(int productIdToAddCart) {
-		// TODO Auto-generated method stub
+		for(Product product : products) {
+			if(product != null && product.getId() == productIdToAddCart) {
+				return product;
+			}
+		}
 		return null;
 	}
 
